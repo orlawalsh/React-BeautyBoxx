@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './App.scss';
+import { Link } from 'react-router';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="container">
+        <nav className="navbar navbar-inverse navbar-static-top">
+              <a className="navbar-brand"> </a> <Link to="/">Beauty Boxx</Link>
+              <ul className="nav navbar-nav">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/Review">Submit a Review</Link></li>
+                <li><Link to="/About">About</Link></li>
+                <li><Link to="/Contact">Contact</Link></li>
+              </ul>
+        </nav>
+        {this.props.children}
       </div>
     );
   }
 }
 
 export default App;
+
