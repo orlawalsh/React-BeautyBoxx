@@ -54,7 +54,7 @@ body {
 
 
 .cell {
-   height: 360px
+   height: 600px
 
 }
 #HomePage{
@@ -67,7 +67,7 @@ body {
     border-width: 1px;
             border-color: #DDD;
 
-     padding-bottom: 20px;
+     padding-bottom: 100px;
 
 }
 

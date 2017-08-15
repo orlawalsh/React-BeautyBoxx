@@ -1,33 +1,34 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
 import { Modal, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 const loadproduct = [
-		{
-	"id": 1,
-    "username": "Sarah777",
-    "brand": "Makeup Revolution",
-    "review": "Amazing, one of the best contour palettes ever. I especially love the two highlight shades at the end.",
-    "price": "12.99",
-    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
-    "date": "08-08-17"
-		}, {
-    "id": 2,
-    "username": "Roxie17",
-    "brand": "Morphe",
-    "review": "One of my favourite palettes, great price for 32 different shades.",
-    "price": "23.99",
-    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
-    "date": "15-08-17"
-        }, {
-    "id": 3,
-    "username": "Zara Larkin",
-    "brand": "Inglot",
-    "review": "The best full coverage foundation I've ever come across!!.",
-    "price": "33.00",
-    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
-    "date": "10-08-17"
-        }
+	// 	{
+	// "id": 1,
+ //    "username": "Sarah777",
+ //    "brand": "Makeup Revolution",
+ //    "reviews": [],
+ //    "price": "12.99",
+ //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
+ //    "date": "08-08-17"
+	// 	}, {
+ //    "id": 2,
+ //    "username": "Roxie17",
+ //    "brand": "Morphe",
+ //    "reviews": [],
+ //    "price": "23.99",
+ //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
+ //    "date": "15-08-17"
+ //        }, {
+ //    "id": 3,
+ //    "username": "Zara Larkin",
+ //    "brand": "Inglot",
+ //    "reviews": [],
+ //    "price": "33.00",
+ //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
+ //    "date": "10-08-17"
+ //        }
 ];
 
 function searchingFor(term){
@@ -128,6 +129,17 @@ if (usernameset != null  && productset != null && priceset != null && reviewset 
 
     }
 
+     createReview() {
+    console.log("POPULATING");
+     let reviews = [];         
+     for (let i = 0; i < this.state.reviews; i++) { 
+        let review = this.state.reviews[i];           
+          reviews.push(<option key={i} value={i}>{reviews.reviews}</option>);   
+          
+     }
+     return reviews;
+ } 
+
 	displayProduct() {
 		let resultsArray = [];
 		this.state.products.filter(searchingFor(this.state.term)).reverse().map((product, i) => {
@@ -136,12 +148,12 @@ if (usernameset != null  && productset != null && priceset != null && reviewset 
 					<div className="thumbnail" id="piclist">
 						<img src={product.image} alt={product.brand} width="100" height="100" />
 						<div className="caption" id="productlist">
-			        <h3>{product.proname} </h3>
+			         <Link to="/Review"><h3>{product.proname} </h3></Link>
               <h4>{product.brand} </h4>
-			        <p>{product.review}</p>
+			        <p>{product.description}</p>
                 			        <p>€{product.price}</p>
 
-                <br></br>
+                <p>{this.createReview()}</p>
                 <br></br>
                 <button type="button" onClick={this.delete.bind(this, product)} className="btn btn-danger btn-xs">Delete</button> &nbsp;
                 <button type="button" onClick={this.edit.bind(this, product)} className="btn btn-info btn-xs">Edit</button> <br></br>

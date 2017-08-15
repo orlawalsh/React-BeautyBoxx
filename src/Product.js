@@ -37,6 +37,7 @@ class Product extends Component {
 	  		brand: "Brand Name",
 	  		description: "About the product",
             price: "Price",
+            reviews: [],
             //date: postdate,
 	  	},
           
@@ -172,7 +173,8 @@ class Product extends Component {
 					    <label htmlFor="description">Product description </label>
 					    <input type="textarea" className="form-control" 
 					    id="description" 
-					    ref={(input) => {this.description = input;}}
+					    maxlength= "300"
+					    					    ref={(input) => {this.description = input;}}
 					    placeholder="Enter a product description" />
 					  </div>
 
