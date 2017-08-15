@@ -136,11 +136,11 @@ if (usernameset != null  && productset != null && priceset != null && reviewset 
 					<div className="thumbnail" id="piclist">
 						<img src={product.image} alt={product.brand} width="100" height="100" />
 						<div className="caption" id="productlist">
-			        <h3>{product.username} </h3>
+			        <h3>{product.proname} </h3>
+              <h4>{product.brand} </h4>
 			        <p>{product.review}</p>
                 			        <p>€{product.price}</p>
 
-                <small>Review Date: {product.date}</small>
                 <br></br>
                 <br></br>
                 <button type="button" onClick={this.delete.bind(this, product)} className="btn btn-danger btn-xs">Delete</button> &nbsp;

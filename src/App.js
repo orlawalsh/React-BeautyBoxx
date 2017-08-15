@@ -12,6 +12,7 @@ class App extends Component {
               <a className="navbar-brand"> </a>
               <ul className="nav navbar-nav">
                 <li><Link to="/">Home</Link></li>
+                <li><Link to="/Product">Submit a Product</Link></li>
                 <li><Link to="/Review">Submit a Review</Link></li>
                 <li><Link to="/About">About</Link></li>
                 <li><Link to="/Contact">Contact</Link></li>

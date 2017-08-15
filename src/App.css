@@ -97,6 +97,19 @@ body {
 
 }
 
+#product{
+    
+    margin-right: 60px;
+        background-color: #EEE;
+    border-radius: 10px;
+     border-style: solid;
+    border-width: 1px;
+            border-color: #DDD;
+     padding-bottom: 8%;
+
+}
+
+
 #piclist{
         background-color: #EEE;
     border-radius: 10px;
