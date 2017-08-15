@@ -52,16 +52,26 @@ body {
   font-weight: bold;
 }
 
+h4 {
+  text-align: center;
+
+}
 
 .cell {
-   height: 600px
+   height: 400px
 
+}
+
+h1{
+
+
+  text-align: center;
 }
 #HomePage{
     text-align: center;
     margin-left: 60px;
     margin-right: 60px;
-        background-color: #EEE;
+        background-color: #dcccff;
     border-radius: 10px;
      border-style: solid;
     border-width: 1px;
@@ -74,7 +84,7 @@ body {
 #AboutPage{
     text-align: center;
     margin-left: 60px;
-        background-color: #EEE;
+        background-color: #dcccff;
     border-radius: 10px;
      border-style: solid;
     border-width: 1px;
@@ -84,11 +94,26 @@ body {
 
 }
 
+#ContactPage{
+    text-align: left;
+    margin-left: 60px;
+    margin-right: 60px;
+        background-color: #dcccff;
+    border-radius: 10px;
+     border-style: solid;
+    border-width: 1px;
+            border-color: #DDD;
+
+     padding-bottom: 15%;
+      padding: 50px;
+
+}
+
 
 #review{
     
     margin-right: 60px;
-        background-color: #EEE;
+        background-color: #dcccff;
     border-radius: 10px;
      border-style: solid;
     border-width: 1px;
@@ -100,7 +125,7 @@ body {
 #product{
     
     margin-right: 60px;
-        background-color: #EEE;
+        background-color: #dcccff;
     border-radius: 10px;
      border-style: solid;
     border-width: 1px;
@@ -111,7 +136,7 @@ body {
 
 
 #piclist{
-        background-color: #EEE;
+        background-color: #eee6ff;
     border-radius: 10px;
      border-style: solid;
     border-width: 1px;
@@ -121,7 +146,7 @@ body {
 
 
 #productlist{
-        background-color: #EEE;
+        background-color: #eee6ff;
 }
 
 

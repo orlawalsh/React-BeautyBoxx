@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import Dropzone from 'react-dropzone';
-import request from 'superagent';
 import Moment from 'react-moment';
 import { browserHistory } from 'react-router';
-const CLOUDINARYPRESET = 'bceusacm';
-const CLOUDINARYURL = 'https://api.cloudinary.com/v1_1/dekzwblnr/upload';
-
-
 
 
 class Review extends Component {
@@ -15,11 +9,11 @@ class Review extends Component {
         var productstock = JSON.parse(localStorage.getItem('reviews'));
         if (productstock === null || productstock.length === 0)
             {
-            var newId = 0;
+            var rewId = 0;
             }
         else
             {
-        	var newId = (JSON.parse(localStorage.getItem('reviews'))[JSON.parse(localStorage.getItem('reviews')).length - 1].id) + 1;
+        	var rewId = (JSON.parse(localStorage.getItem('reviews'))[JSON.parse(localStorage.getItem('reviews')).length - 1].id) + 1;
             }
         
         var moment = require('moment');
@@ -34,49 +28,19 @@ class Review extends Component {
 	  	products: JSON.parse(localStorage.getItem('products')) || [],
 
 	  	newReview: {
-            id: newId,
+            id: rewId,
             username: "User Name",
 	  		brand: "Makeup brand/Product name",
 	  		review: "Write your review here",
             date: postdate,
 	  	},
           
-	  	uploadedFileCloudinaryUrl: ''
-          
 	  };
         
 	  this.submitReview = this.submitReview.bind(this);
-	  //this.onImgDrop = this.onImgDrop.bind(this);
         
 	}
     
-      
-
-	// onImgDrop(files) {
-	// 	this.setState({
- //      uploadedFile: files[0]
- //    });
-
- //    this.handleImageUpload(files[0]);
-	// }
-
-	// handleImageUpload(file) {
- //    let upload = request.post(CLOUDINARYURL)
- //                        .field('upload_preset', CLOUDINARYPRESET)
- //                        .field('file', file);
-
- //    upload.end((err, response) => {
- //      if (err) {
- //        console.error(err);
- //      }
-
- //      if (response.body.secure_url !== '') {
- //        this.setState({
- //          uploadedFileCloudinaryUrl: response.body.secure_url
- //        });
- //      }
- //    });
- //  }
 
   createSelectProduct() {
   	console.log("POPULATING");
@@ -112,7 +76,7 @@ onDropdownSelected(e) {
 		reviews.push(newReview);
 
 		// update product.reviews
-		this.state.products[this.brand.value].reviews.push(newReview.id);
+		this.state.products[this.brand.value].reviews.push(newReview.review);
 		localStorage.setItem('products', JSON.stringify(this.state.products));
 
 
@@ -151,10 +115,9 @@ onDropdownSelected(e) {
 					  </div>
                                         
            <div className="form-group">
-             <label htmlFor="Brand">Makeup Brand </label>
-
+             <label htmlFor="Brand">Product to review </label>
         <select id="brand"
-        ref={(input) => {this.brand = input;}}
+        								ref={(input) => {this.brand = input;}}
 					    				className="form-control" 
 					    				id="brand" 
 					    				placeholder="Please select the brand to review"
@@ -162,15 +125,16 @@ onDropdownSelected(e) {
          {this.createSelectProduct()} </select>
      
             </div>
-                    
-                    
-					  <div className="form-group">
-					    <label htmlFor="Review">Product Review </label>
-					    <input type="textarea" className="form-control" 
-					    id="review" 
-					    ref={(input) => {this.review = input;}}
-					    placeholder="Enter a product review" />
+
+            <div className="form-group">
+					    <label htmlFor="username">Product Review </label>
+					    <input type="textarea" 
+					    				ref={(input) => {this.review = input;}}
+					    				className="form-control" 
+					    				id="name" 
+					    				placeholder="Please enter your review" />
 					  </div>
+					
 
 					  <button type="button" onClick={this.submitReview} className="btn btn-info">Submit</button>
 					</form>

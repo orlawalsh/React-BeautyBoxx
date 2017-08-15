@@ -11,13 +11,23 @@ class About extends Component {
     return (
         <div id="AboutPage" className="col-lg-11">
 
-    <h1>About Us</h1>        
-    <h4>Lorem ipsum doloor sit amet, consectetur adipiscing elit. Maecenas faucibus interdum lectus, non ultricies ligula laoreet et. In a porta velit. Quisque felis risus, luctus et euismod ut, mattis a augue. Pellentesque rutrum felis eu lectus vestibulum dapibus. Mauris at quam eget felis accumsan euismod. Praesent posuere eget mi vel auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+    <h1>About Beauty Boxx</h1>  
+    <br></br>
+    <br></br>     
+    <h4>Welcome to our new review website! We are so happy to welcome you to this page. </h4>
+
+    <h4>Our facebook page is very close to 
+    100k members which can make it very hard to find certain products which ends up with a lot of duplicate posts of people
+    asking the same questions.</h4>
+    <h4>This website will act to minimise that. </h4>
+
+    <h4>Here you will be able
+    to add a product (if it hasn't already been added) and then you and others can review and give opinions on that product. 
+    </h4>
     
         
-    <h4>Suspendisse feugiat lorem et felis condimentum, sit amet egestas diam euismod. Proin sollicitudin tempor metus a luctus. Fusce vel felis mauris. Praesent molestie arcu eu arcu pulvinar, id consequat elit placerat. Morbi sollicitudin mi at feugiat pellentesque. Maecenas rhoncus et ante nec rutrum. Suspendisse finibus ut justo in mollis. Suspendisse mattis id ex ut dignissim. Sed eu metus sed neque sodales pulvinar.</h4>
+    <h4>Don't forget to join our <a href="https://www.facebook.com/groups/861997640563323/">Facebook Group</a> or just search "Beauty Boxx" on Facebook!  </h4>
     
-    <h4>Suspendisse a ultricies justo. Duis ac elementum tellus. Cras id venenatis sapien. Morbi lobortis faucibus eros, in placerat ligula viverra vitae. Cras nunc velit, euismod sed pulvinar non, sollicitudin blandit mi. Sed facilisis magna ante, condimentum venenatis lectus dapibus at. Sed quis rutrum risus. Duis a diam eget elit ultricies tincidunt. Proin eu eleifend velit. Quisque sed purus quis diam ullamcorper rhoncus. Fusce a orci est. In ut lectus id lorem gravida molestie ac sed eros. Suspendisse efficitur dictum augue, sed convallis enim aliquet ut. In mollis nec nisi et dignissim. Fusce in risus ac justo fermentum lacinia ut at eros. Maecenas ut eros accumsan, posuere sapien lobortis, hendrerit ipsum</h4>
         </div>
     );
   }

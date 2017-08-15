@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import beauty from './beauty.svg';
+//import beauty from './beauty.svg';
 import './App.css';
 import { Link } from 'react-router';
 

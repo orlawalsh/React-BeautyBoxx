@@ -9,7 +9,7 @@ import Contact from './Contact';
 import Product from './Product';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
-import FontAwesome from 'react-fontawesome';
+//import FontAwesome from 'react-fontawesome';
 
 ReactDOM.render((
 	<Router history={browserHistory}>

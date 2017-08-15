@@ -33,23 +33,15 @@ const loadproduct = [
 
 function searchingFor(term){
     return function(x){
-        if (x.brand !== undefined)
-            {
-        return x.brand.toLowerCase().includes(term.toLowerCase()) || x.username.toLowerCase().includes(term.toLowerCase()) || x.review.toLowerCase().includes(term.toLowerCase()) || !term ;
-            }
-        else
-            {
-                //console.log("No Search");
-            }
+        return x.brand.toLowerCase().includes(term.toLowerCase()) || x.proname.toLowerCase().includes(term.toLowerCase()) || !term;
     }
 }
-
 
 class Home extends Component {
 
 	constructor(props) {
-    console.log("STARTING")
-    console.log()
+    //console.log("STARTING")
+    //console.log()
 
     if(localStorage.getItem("products") == null || localStorage.getItem("products") == "undefined" ) {
 
@@ -58,7 +50,7 @@ class Home extends Component {
     
 	  super(props);
 
-    console.log(loadproduct);
+    //console.log(loadproduct);
     
 	  this.state = {
 
@@ -103,17 +95,17 @@ products.push(loadproduct[0], loadproduct[1], loadproduct[2]);
     edit(product)
     {
          let editproduct = product;
-    var usernameset=prompt("Please enter your username",product.username);
-    var productset=prompt("Please enter Makeup Brand/Product Name", product.brand);
+    var pronameset=prompt("Please enter the product name",product.proname);
+    var brandset=prompt("Please enter Makeup Brand", product.brand);
     var priceset=prompt("Please enter the price of the item", product.price);
-    var reviewset=prompt("Please enter your review", product.review);
+    var descptset=prompt("Please enter the product description", product.description);
 
-if (usernameset != null  && productset != null && priceset != null && reviewset != null && 
-  usernameset !== ''  && productset !== '' && priceset !== '' && reviewset !== ''){
-         editproduct.username = usernameset;
-         editproduct.brand = productset;
+if (pronameset != null  && brandset != null && priceset != null && descptset != null && 
+  pronameset !== ''  && brandset !== '' && priceset !== '' && descptset !== ''){
+         editproduct.proname = pronameset;
+         editproduct.brand = brandset;
         editproduct.price = priceset;
-        editproduct.review = reviewset;
+        editproduct.description = descptset;
          this.setState({editproduct});
          let products = this.state.products;
          		      localStorage.setItem('products', JSON.stringify(products));
@@ -130,11 +122,11 @@ if (usernameset != null  && productset != null && priceset != null && reviewset 
     }
 
      createReview() {
-    console.log("POPULATING");
+    //console.log("POPULATING");
      let reviews = [];         
-     for (let i = 0; i < this.state.reviews; i++) { 
+     for (let i = 0; i < this.state.reviews.length; i++) { 
         let review = this.state.reviews[i];           
-          reviews.push(<option key={i} value={i}>{reviews.reviews}</option>);   
+          reviews.push(<option key={i} value={i}>{review.reviews}</option>);   
           
      }
      return reviews;
@@ -146,14 +138,16 @@ if (usernameset != null  && productset != null && priceset != null && reviewset 
 			resultsArray.push( 
 				<div className="col-md-6 cell">
 					<div className="thumbnail" id="piclist">
-						<img src={product.image} alt={product.brand} width="100" height="100" />
+						<img src={product.image} alt={product.brand} width="100" height="300" />
 						<div className="caption" id="productlist">
 			         <Link to="/Review"><h3>{product.proname} </h3></Link>
               <h4>{product.brand} </h4>
 			        <p>{product.description}</p>
                 			        <p>€{product.price}</p>
 
-                <p>{this.createReview()}</p>
+                
+
+                <p>{this.createReview}</p>
                 <br></br>
                 <button type="button" onClick={this.delete.bind(this, product)} className="btn btn-danger btn-xs">Delete</button> &nbsp;
                 <button type="button" onClick={this.edit.bind(this, product)} className="btn btn-info btn-xs">Edit</button> <br></br>

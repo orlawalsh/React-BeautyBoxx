@@ -173,7 +173,7 @@ class Product extends Component {
 					    <label htmlFor="description">Product description </label>
 					    <input type="textarea" className="form-control" 
 					    id="description" 
-					    maxlength= "300"
+					    maxLength= "300"
 					    					    ref={(input) => {this.description = input;}}
 					    placeholder="Enter a product description" />
 					  </div>
