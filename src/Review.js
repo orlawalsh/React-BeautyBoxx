@@ -78,8 +78,8 @@ class Review extends Component {
   }
 
 	submitProduct() {
-		console.log('Submit Review');
-		console.log(this.username.value, this.brand.value, this.review.value);
+		//console.log('Submit Review');
+		//console.log(this.username.value, this.brand.value, this.review.value);
         if (this.username.value !== '' && this.brand.value !== '' && this.price.value !== '' && this.review.value !== '' )
             {
 		let newProduct = this.state.newProduct;
@@ -101,7 +101,7 @@ class Review extends Component {
                 }
         else
             {
-                console.log("Oops")
+                //console.log("Oops")
                 alert("Please Fill The Required Fields");
 
             }
@@ -170,7 +170,7 @@ class Review extends Component {
                     
 					  <div className="form-group">
 					    <label htmlFor="Review">Product Review </label>
-					    <textarea className="form-control" 
+					    <input type="textarea" className="form-control" 
 					    id="review" 
 					    ref={(input) => {this.review = input;}}
 					    placeholder="Enter a product review" />

@@ -5,28 +5,28 @@ import { Modal, Button } from 'react-bootstrap';
 const loadproduct = [
 		{
 	"id": 1,
-    "username": "Orla",
-    "brand": "Makeup Revolution Ultra Contour Palette",
+    "username": "Sarah777",
+    "brand": "Makeup Revolution",
     "review": "Amazing, one of the best contour palettes ever. I especially love the two highlight shades at the end.",
     "price": "12.99",
     "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
     "date": "08-08-17"
 		}, {
     "id": 2,
-    "username": "Orla",
-    "brand": "Makeup Revolution Ultra Contour Palette",
-    "review": "Amazing, one of the best contour palettes ever. I especially love the two highlight shades at the end.",
-    "price": "12.99",
-    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
-    "date": "08-08-17"
+    "username": "Roxie17",
+    "brand": "Morphe",
+    "review": "One of my favourite palettes, great price for 32 different shades.",
+    "price": "23.99",
+    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
+    "date": "15-08-17"
         }, {
     "id": 3,
-    "username": "Orla",
-    "brand": "Makeup Revolution Ultra Contour Palette",
-    "review": "Amazing, one of the best contour palettes ever. I especially love the two highlight shades at the end.",
-    "price": "12.99",
-    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
-    "date": "08-08-17"
+    "username": "Zara Larkin",
+    "brand": "Inglot",
+    "review": "The best full coverage foundation I've ever come across!!.",
+    "price": "33.00",
+    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
+    "date": "10-08-17"
         }
 ];
 
@@ -38,7 +38,7 @@ function searchingFor(term){
             }
         else
             {
-                console.log("No Search");
+                //console.log("No Search");
             }
     }
 }
@@ -47,23 +47,24 @@ function searchingFor(term){
 class Home extends Component {
 
 	constructor(props) {
-    //console.log("STARTING")
+    console.log("STARTING")
+    console.log()
 
-    if(localStorage.getItem("products") == null) {
+    if(localStorage.getItem("products") == null || localStorage.getItem("products") == "undefined" ) {
 
       localStorage.setItem('products', JSON.stringify(loadproduct));
     }
     
 	  super(props);
 
-    //console.log(loadproduct);
+    console.log(loadproduct);
     
 	  this.state = {
 
          products: JSON.parse(localStorage.getItem('products')) || [],
                     term: '',
         
-	  };
+	  }
 
       this.searchHandler = this.searchHandler.bind(this);
         var productstock = JSON.parse(localStorage.getItem('products'));
@@ -93,7 +94,8 @@ products.push(loadproduct[0], loadproduct[1], loadproduct[2]);
     if (newState.indexOf(product) > -1) {
       newState.splice(newState.indexOf(product), 1);
       this.setState({products: this.state.products});
-      products: JSON.parse(localStorage.setItem("products", JSON.stringify(this.state.products)));
+      localStorage.setItem("products", JSON.stringify(this.state.products))
+      products: this.state.products;
     }
      }
     
