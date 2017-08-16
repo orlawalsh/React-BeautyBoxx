@@ -34,7 +34,7 @@ class Contact extends Component {
 <br></br>
     </h4></Col>
 
-          <Col sm="6"> <br></br> <h4>Or Fill out or contact form!</h4>
+          <Col sm="6"> <br></br> <h4>Or Fill out our contact form!</h4>
          
   <Form horizontal>
     

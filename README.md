@@ -5,7 +5,7 @@ Name: Orla Walsh
 ## Overview.
 The concept of this application is for users to be able to search, add products and review products. To reduce the amount of reviws, the reviews are all stored within the product. The user can search for a product by brand or name to check to see if someone has already added that product. If the product is there, the user can click the name of the product and add their review to that product. If the product is not there, the user can add the product, once it is added they can then review it. When adding the product, the user can upload a picture of the product, add the name, brand, price and description of the product. When adding a review, the user must enter a username, select the product they are reviewing and then review the product, the date is added automatically and the review is then displayed underneath the product. They can also see all reviews on a seperate page. Other users can then see all the reviews for that product.
 
-#### List of user features
+### List of user features
  
  + Add a product
  + Edit product
@@ -57,7 +57,7 @@ const loadproduct = [
             "reviews": []
         }, {
 
-        "id": 3,
+            "id": 3,
             "proname": "HD Foundation No. 73",
             "brand": "Inglot",
             "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
@@ -70,15 +70,34 @@ const loadproduct = [
 
 ## App Component Design.
 
-A diagram showing the app's hierarchical component design (see example below). 
+A diagram showing the app's hierarchical component design.
 
 ![][image2]
 
 ## UI Design.
 
-. . . . . Screenshots of app's views (see example below) with appropriate captions (user regeneration and login views, if implemented, can be omitted) . . . . . . . 
+Screenshots of app's views 
 
+### Home Page
 ![][image3]
+
+### Add product page
+![][image4]
+
+### Add review page
+![][image5]
+
+### Review display on home page and review page
+![][image6]
+![][image7]
+
+### About Page
+![][image8]
+
+### Contact Page
+![][image9]
+
+
 
 ## Routing.
 + / - displays all products
@@ -104,7 +123,14 @@ A diagram showing the app's hierarchical component design (see example below).
 
 
 [image1]: ./model.png
-[image2]: ./design.jpg
-[image3]: ./screen.png
+[image2]: ./diagram.png
+[image3]: ./home.png
+[image4]: ./product.png
+[image5]: ./review.png
+[image6]: ./reviewhome.png
+[image7]: ./reviewpage.png
+[image8]: ./about.png
+[image9]: ./contact.png
+
 
 
