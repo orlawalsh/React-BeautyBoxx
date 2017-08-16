@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Table } from 'react-bootstrap';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 
@@ -13,6 +13,12 @@ function searchingFor(term){
         return x.brand.toLowerCase().includes(term.toLowerCase()) || x.proname.toLowerCase().includes(term.toLowerCase()) || !term;
     }
 }
+
+function matchingReview(reviewIds){
+    return function(x){
+        return reviewIds.indexOf(x.id) > -1;
+      }
+    }
 
 class DisplayReview extends Component {
 
@@ -33,6 +39,7 @@ class DisplayReview extends Component {
 	  this.state = {
 
          products: JSON.parse(localStorage.getItem('products')) || [],
+         reviews: JSON.parse(localStorage.getItem('reviews')) || [],
                     term: '',
         
 	  }
@@ -73,7 +80,29 @@ products.push(loadproduct[0], loadproduct[1], loadproduct[2]);
 			         <h3>{product.proname} </h3>
               <h4>{product.brand} </h4>
 			        <h5>{product.username}</h5><br></br>
-                <div>{product.reviews}</div><br></br>
+                <Table striped bordered condensed hover>
+            <thead>
+             <tr>
+        <th>Username</th>
+        <th>Review</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+<tbody>
+              {this.state.reviews.filter(matchingReview(product.reviews)).map((review, i) => {
+
+          
+
+        return <tr><td><b>{review.username}</b></td>
+        <td><i>{review.review}</i></td>
+        <td>{review.date}</td>
+      </tr>;
+
+ 
+              })}
+                    </tbody>
+  </Table>
+
 
                 <br></br>
 

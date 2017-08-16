@@ -33,7 +33,7 @@ const loadproduct = [
 
 function searchingFor(term){
     return function(x){
-        return x.brand.toLowerCase().includes(term.toLowerCase()) || x.proname.toLowerCase().includes(term.toLowerCase()) || !term;
+       return x.brand.toLowerCase().includes(term.toLowerCase()) || x.proname.toLowerCase().includes(term.toLowerCase()) || !term;
     }
 }
 
@@ -154,7 +154,7 @@ if (pronameset != null  && brandset != null && priceset != null && descptset != 
 		let resultsArray = [];
 		this.state.products.filter(searchingFor(this.state.term)).reverse().map((product, i) => {
 			resultsArray.push( 
-				<div className="col-md-6 cell">
+				<div className="col-md-6">
 					<div className="thumbnail" id="photo">
 						<img src={product.image} id="size" alt={product.brand} />
 						<div className="caption" id="list">
@@ -165,10 +165,11 @@ if (pronameset != null  && brandset != null && priceset != null && descptset != 
 
                         <Button className="btn btn-primary" onClick={ ()=> this.setState({ open: !this.state.open })}>
           Show Reviews
-        </Button>
+        </Button> &nbsp;
+        <button type="button" className="btn btn-info"> <Link to="/DisplayReview">See all reviews</Link></button> <br></br>
 
         <Collapse in={this.state.open}>
-          <div>
+          <div style={{zIndex: 300 }}>
             <Well>
 
 
@@ -199,7 +200,7 @@ if (pronameset != null  && brandset != null && priceset != null && descptset != 
           </div>
         </Collapse>
     
-                <br></br><br></br>
+                <br></br>
                 <button type="button" onClick={this.delete.bind(this, product)} className="btn btn-danger">Delete</button> &nbsp;
                 <button type="button" onClick={this.edit.bind(this, product)} className="btn btn-info">Edit</button> <br></br>
 			      </div>

@@ -68,7 +68,7 @@ class Contact extends Component {
 
     <FormGroup>
       <Col smOffset={2} sm={10}>
-        <Button type="submit">
+        <Button type="submit" className="btn btn-info">
           Submit
         </Button>
       </Col>
