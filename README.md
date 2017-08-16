@@ -25,7 +25,7 @@ The concept of this application is for users to be able to search, add products 
 + react-router
 
 ### Cloning Application
-+ git clone (add link here)
++ git clone https://github.com/orlawalsh/React-BeautyBoxx.git
 + cd beauty-boxx
 + npm install
 + npm start
@@ -103,7 +103,7 @@ A diagram showing the app's hierarchical component design (see example below).
 
 
 
-[image1]: ./image1.png
+[image1]: ./model.png
 [image2]: ./design.jpg
 [image3]: ./screen.png
 

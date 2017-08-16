@@ -63,10 +63,10 @@ h4 {
   height: 150px;
 }
 
-.bell {
+/*.bell {
 
   height: 450px;
-}
+}*/
 .cell {
    height: 540px;
 
@@ -185,6 +185,13 @@ text-align: left;
 
 
 }
+thead, tbody {
 
+  background-color: #eee6ff;
+}
 
+.well {
+
+  background-color: #eee6ff;
+}
 

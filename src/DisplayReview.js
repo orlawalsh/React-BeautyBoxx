@@ -106,7 +106,8 @@ products.push(loadproduct[0], loadproduct[1], loadproduct[2]);
 
                 <br></br>
 
-                <button type="button" className="btn btn-info"> <Link to="/">Return to home </Link></button> <br></br>
+                <button type="button" className="btn btn-info"> <Link to="/">Return to home </Link></button> &nbsp;
+                <button type="button"  className="btn btn-info"><Link to="/Review">Add Review</Link></button>
 			      </div>
 					</div>
 				</div>

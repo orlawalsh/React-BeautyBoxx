@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
-import { Modal, Button, Collapse, Well, Table } from 'react-bootstrap';
+import { Button, Collapse, Well, Table } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 const loadproduct = [
-	// 	{
-	// "id": 1,
- //    "proname": "Ultra Contour Palette",
- //    "brand": "Makeup Revolution",
- //    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
- //    "price": "12.99",
- //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
- //    "reviews": []
-	// 	}, {
- //    "id": 2,
- //    "proname": "35S",
- //    "brand": "Morphe",
- //    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
- //    "price": "23.99",
- //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
- //     "reviews": []
- //        }, {
- //    "id": 3,
- //    "proname": "HD Foundation No. 73",
- //    "brand": "Inglot",
- //    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
- //    "price": "33.00",
- //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
- //     "reviews": []
- //        }
+		{
+	"id": 1,
+    "proname": "Ultra Contour Palette",
+    "brand": "Makeup Revolution",
+    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
+    "price": "12.99",
+    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
+    "reviews": []
+		}, {
+    "id": 2,
+    "proname": "35S",
+    "brand": "Morphe",
+    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
+    "price": "23.99",
+    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
+     "reviews": []
+        }, {
+    "id": 3,
+    "proname": "HD Foundation No. 73",
+    "brand": "Inglot",
+    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
+    "price": "33.00",
+    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
+     "reviews": []
+        }
 ];
 
 function searchingFor(term){
@@ -61,7 +60,7 @@ class Home extends Component {
 
      this.state = {};
 
-    //console.log(loadproduct);
+    console.log(loadproduct);
     
 	  this.state = {
 
@@ -77,13 +76,14 @@ class Home extends Component {
             {
                 let products = this.state.products;
 
-products.push(loadproduct[0], loadproduct[1], loadproduct[2]);
+                products.push(loadproduct[0], loadproduct[1], loadproduct[2]);
 
         
 		this.setState({products});
                 		localStorage.setItem('products', JSON.stringify(loadproduct));
 
             }
+
         else{
             
         }
@@ -159,44 +159,43 @@ if (pronameset != null  && brandset != null && priceset != null && descptset != 
 						<img src={product.image} id="size" alt={product.brand} />
 						<div className="caption" id="list">
 			         <Link to="/Review"><h3>{product.proname} </h3></Link>
-              <h4>{product.brand} </h4>
-			        <p>{product.description}</p>
-                			        <p>€{product.price}</p>
+                <h4>{product.brand} </h4>
+			          <p>{product.description}</p>
+                <p>€{product.price}</p>
 
-                        <Button className="btn btn-primary" onClick={ ()=> this.setState({ open: !this.state.open })}>
-          Show Reviews
-        </Button> &nbsp;
-        <button type="button" className="btn btn-info"> <Link to="/DisplayReview">See all reviews</Link></button> <br></br>
+            <Button className="btn btn-primary" onClick={ ()=> this.setState({ open: !this.state.open })}>
+                Show Reviews
+            </Button> &nbsp;
 
-        <Collapse in={this.state.open}>
+            <button type="button" className="btn btn-info"> <Link to="/DisplayReview">See all reviews</Link></button> <br></br>
+
+          <Collapse in={this.state.open}>
           <div style={{zIndex: 300 }}>
-            <Well>
+         
 
-
+<br></br>
                   <Table striped bordered condensed hover>
-            <thead>
-             <tr>
-        <th>Username</th>
-        <th>Review</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-<tbody>
-              {this.state.reviews.filter(matchingReview(product.reviews)).map((review, i) => {
-
-          
-
-        return <tr><td><b>{review.username}</b></td>
-        <td><i>{review.review}</i></td>
-        <td>{review.date}</td>
-      </tr>;
+                  
+                    <thead>
+                      <tr>
+                        <th>Username</th>
+                        <th>Review</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                <tbody>
+                    {this.state.reviews.filter(matchingReview(product.reviews)).map((review, i) => {
+                        return <tr><td><b>{review.username}</b></td>
+                        <td><i>{review.review}</i></td>
+                        <td>{review.date}</td>
+                      </tr>;
 
  
-              })}
-                    </tbody>
-  </Table>
+                    })}
+                </tbody>
+                  </Table>
 
-            </Well>
+       
           </div>
         </Collapse>
     
