@@ -24,7 +24,7 @@ class Product extends Component {
         
         var moment = require('moment');
 
-         var postdate = moment().format("DD-MM-YYYY HH:mm");
+         var postdate = moment().format("MMM Do YY");
 
 
 	  super(props);
@@ -116,15 +116,15 @@ class Product extends Component {
 		return (
 			<div className="row">
 				<div className="col-sm-12" id="product">
-					<h1>Write your review here</h1>
+					<h1>Enter the product here</h1>
 					<form>
             <label htmlFor="dropzone">Product Image (Optional)</label>
 					<Dropzone
-             style={{"width" : "30%", "height" : "25%", "border" : "2px solid #BBB", "backgroundColor" : "#FFFFFF", "color": "#999" }}
+					className="dropzone"
 			      multiple={false}
 			      accept="image/*"
 			      onDrop={this.onImgDrop}>
-			      <h5>Drop Image or Click to add.</h5>
+			      <h5>Drop an Image or Click to add.</h5>
                 </Dropzone>
             <br>
             </br>
@@ -163,6 +163,9 @@ class Product extends Component {
                     <div className="form-group">
 					    <label htmlFor="Price">Product Price </label>
 					    <input type="number" 
+					    				placeholder="0.00"  
+					    				min="0"
+					    				step="0.01"
 					    				ref={(input) => {this.price = input;}}
 					    				className="form-control" 
 					    				id="price" 
@@ -170,8 +173,8 @@ class Product extends Component {
 					  </div>    
                     
 					  <div className="form-group">
-					    <label htmlFor="description">Product description </label>
-					    <input type="textarea" className="form-control" 
+					    <label htmlFor="description">Product description (Max 300 Characters) </label>
+					    <textarea className="form-control" 
 					    id="description" 
 					    maxLength= "300"
 					    					    ref={(input) => {this.description = input;}}

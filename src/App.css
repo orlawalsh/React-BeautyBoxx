@@ -57,8 +57,18 @@ h4 {
 
 }
 
+#size {
+
+  width: 150px; 
+  height: 150px;
+}
+
+.bell {
+
+  height: 450px;
+}
 .cell {
-   height: 400px
+   height: 510px;
 
 }
 
@@ -135,7 +145,7 @@ h1{
 }
 
 
-#piclist{
+#photo{
         background-color: #eee6ff;
     border-radius: 10px;
      border-style: solid;
@@ -145,15 +155,12 @@ h1{
 }
 
 
-#productlist{
+#list{
         background-color: #eee6ff;
 }
 
 
-#HomePage h1
-{
-    margin-left: 15px;
-}
+
 
 #HomePage input[type=text] {
     width: 97.5%;
@@ -162,4 +169,22 @@ h1{
     box-sizing: border-box;
     font-size: 20pt;
 }
+
+.dropzone{
+  text-align: center;
+    width : 200px;
+  height : 100px;
+  border : 2px solid #BBB;
+  background-color: #FFFFFF;
+  color: #999;
+
+}
+
+ul{
+text-align: left;
+
+
+}
+
+
 

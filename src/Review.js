@@ -18,7 +18,7 @@ class Review extends Component {
         
         var moment = require('moment');
 
-         var postdate = moment().format("DD-MM-YYYY HH:mm");
+         var postdate = moment().format("MMM Do YY");
 
 
 	  super(props);
@@ -76,7 +76,7 @@ onDropdownSelected(e) {
 		reviews.push(newReview);
 
 		// update product.reviews
-		this.state.products[this.brand.value].reviews.push(newReview.review);
+		this.state.products[this.brand.value].reviews.push(newReview.id);
 		localStorage.setItem('products', JSON.stringify(this.state.products));
 
 
@@ -128,7 +128,7 @@ onDropdownSelected(e) {
 
             <div className="form-group">
 					    <label htmlFor="username">Product Review </label>
-					    <input type="textarea" 
+					    <textarea 
 					    				ref={(input) => {this.review = input;}}
 					    				className="form-control" 
 					    				id="name" 

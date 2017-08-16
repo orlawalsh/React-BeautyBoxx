@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Collapse, Well, Table } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 const loadproduct = [
@@ -37,11 +37,20 @@ function searchingFor(term){
     }
 }
 
+function matchingReview(reviewIds){
+    return function(x){
+        return reviewIds.indexOf(x.id) > -1;
+      }
+    }
+
+
 class Home extends Component {
 
 	constructor(props) {
     //console.log("STARTING")
     //console.log()
+
+    
 
     if(localStorage.getItem("products") == null || localStorage.getItem("products") == "undefined" ) {
 
@@ -50,11 +59,14 @@ class Home extends Component {
     
 	  super(props);
 
+     this.state = {};
+
     //console.log(loadproduct);
     
 	  this.state = {
 
          products: JSON.parse(localStorage.getItem('products')) || [],
+         reviews: JSON.parse(localStorage.getItem('reviews')) || [],
                     term: '',
         
 	  }
@@ -121,36 +133,75 @@ if (pronameset != null  && brandset != null && priceset != null && descptset != 
 
     }
 
-     createReview() {
-    //console.log("POPULATING");
-     let reviews = [];         
-     for (let i = 0; i < this.state.reviews.length; i++) { 
-        let review = this.state.reviews[i];           
-          reviews.push(<option key={i} value={i}>{review.reviews}</option>);   
+    toggle() {
+    console.log(this.state.detailed)
+    this.setState({detailed: !this.state.detailed})
+  }
+
+
+ //     createReview() {
+ //    //console.log("POPULATING");
+ //     let reviews = [];         
+ //     for (let i = 0; i < this.state.reviews.length; i++) { 
+ //        let review = this.state.reviews[i];           
+ //          reviews.push(<option key={i} value={i}>{review.reviews}</option>);   
           
-     }
-     return reviews;
- } 
+ //     }
+ //     return reviews;
+ // } 
 
 	displayProduct() {
 		let resultsArray = [];
 		this.state.products.filter(searchingFor(this.state.term)).reverse().map((product, i) => {
 			resultsArray.push( 
 				<div className="col-md-6 cell">
-					<div className="thumbnail" id="piclist">
-						<img src={product.image} alt={product.brand} width="100" height="300" />
-						<div className="caption" id="productlist">
+					<div className="thumbnail" id="photo">
+						<img src={product.image} id="size" alt={product.brand} />
+						<div className="caption" id="list">
 			         <Link to="/Review"><h3>{product.proname} </h3></Link>
               <h4>{product.brand} </h4>
 			        <p>{product.description}</p>
                 			        <p>€{product.price}</p>
 
-                
+                        <Button className="btn btn-primary" onClick={ ()=> this.setState({ open: !this.state.open })}>
+          Show Reviews
+        </Button>
 
-                <p>{this.createReview}</p>
-                <br></br>
-                <button type="button" onClick={this.delete.bind(this, product)} className="btn btn-danger btn-xs">Delete</button> &nbsp;
-                <button type="button" onClick={this.edit.bind(this, product)} className="btn btn-info btn-xs">Edit</button> <br></br>
+        <Collapse in={this.state.open}>
+          <div>
+            <Well>
+
+
+                  <Table striped bordered condensed hover>
+            <thead>
+             <tr>
+        <th>Username</th>
+        <th>Review</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+<tbody>
+              {this.state.reviews.filter(matchingReview(product.reviews)).map((review, i) => {
+
+          
+
+        return <tr><td><b>{review.username}</b></td>
+        <td><i>{review.review}</i></td>
+        <td>{review.date}</td>
+      </tr>;
+
+ 
+              })}
+                    </tbody>
+  </Table>
+
+            </Well>
+          </div>
+        </Collapse>
+    
+                <br></br><br></br>
+                <button type="button" onClick={this.delete.bind(this, product)} className="btn btn-danger">Delete</button> &nbsp;
+                <button type="button" onClick={this.edit.bind(this, product)} className="btn btn-info">Edit</button> <br></br>
 			      </div>
 					</div>
 				</div>
