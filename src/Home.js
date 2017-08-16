@@ -6,28 +6,28 @@ import { Link } from 'react-router';
 const loadproduct = [
 	// 	{
 	// "id": 1,
- //    "username": "Sarah777",
+ //    "proname": "Ultra Contour Palette",
  //    "brand": "Makeup Revolution",
- //    "reviews": [],
+ //    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
  //    "price": "12.99",
  //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
- //    "date": "08-08-17"
+ //    "reviews": []
 	// 	}, {
  //    "id": 2,
- //    "username": "Roxie17",
+ //    "proname": "35S",
  //    "brand": "Morphe",
- //    "reviews": [],
+ //    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
  //    "price": "23.99",
  //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
- //    "date": "15-08-17"
+ //     "reviews": []
  //        }, {
  //    "id": 3,
- //    "username": "Zara Larkin",
+ //    "proname": "HD Foundation No. 73",
  //    "brand": "Inglot",
- //    "reviews": [],
+ //    "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
  //    "price": "33.00",
  //    "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
- //    "date": "10-08-17"
+ //     "reviews": []
  //        }
 ];
 

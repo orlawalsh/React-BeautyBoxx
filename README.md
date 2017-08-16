@@ -34,10 +34,39 @@ This application runs on http://localhost:3000/
 
 ## Data Model Design.
 Diagram of app's data model and sample of the test data used (JSON or equivalent).
-
 ![][image1]
 
-Use meaningful sample data. Briefly explain any non-trivial issues.
+## JSON Sample Data
+```sh
+const loadproduct = [
+		{
+	        "id": 1,
+            "proname": "Ultra Contour Palette",
+            "brand": "Makeup Revolution",
+            "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
+            "price": "12.99",
+            "image": "http://res.cloudinary.com/dekzwblnr/image/upload/c_scale,w_320/v1502465868/makeup-revolution-ultra-contour-palette_bicd26.jpg",
+            "reviews": []
+		}, {
+		    "id": 2,
+            "proname": "35S",
+            "brand": "Morphe",
+            "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
+             "price": "23.99",
+            "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502725089/ufv0uag38nn2fegazqqb.jpg",
+            "reviews": []
+        }, {
+
+        "id": 3,
+            "proname": "HD Foundation No. 73",
+            "brand": "Inglot",
+            "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.",
+            "price": "33.00",
+            "image": "http://res.cloudinary.com/dekzwblnr/image/upload/v1502802160/inglot_bgezjx.jpg",
+            "reviews": []
+        }
+];
+```
 
 ## App Component Design.
 
@@ -60,8 +89,13 @@ A diagram showing the app's hierarchical component design (see example below).
 + /Contact - displays information and contact form
 
 ## Extra features
-
-. . . . . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app . . . . . .  
++ Users can search for a product
++ Users can delete & edit products
++ react-dropzone was used for the purpose of being able to upload product images
++ Images are stored using cloudinary
++ use of the JSON local storage
++ react-moment is used to display the time the review was posted
++ Routes in a navbar for easy naviagtion between pages
 
 ## Independent learning.
 
@@ -69,7 +103,7 @@ A diagram showing the app's hierarchical component design (see example below).
 
 
 
-[image1]: ./model.png
+[image1]: ./image1.png
 [image2]: ./design.jpg
 [image3]: ./screen.png
 
