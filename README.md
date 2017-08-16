@@ -113,13 +113,17 @@ Screenshots of app's views
 + react-dropzone was used for the purpose of being able to upload product images
 + Images are stored using cloudinary
 + use of the JSON local storage
-+ react-moment is used to display the time the review was posted
++ react-moment is used to display the date the review was posted
 + Routes in a navbar for easy naviagtion between pages
 
 ## Independent learning.
 
-. . . . . State the non-standard aspects of Angular (or other related technologies) that you researched and applied in this assignment . . . . .  
-
++ I learned how to implement routing
++ I learned how to use react-drop with cloudinary for the purpose of uploading product pictures
++ I learned how to use and implement JSON local storage
++ I also added a search function
++
++
 
 
 [image1]: ./model.png
