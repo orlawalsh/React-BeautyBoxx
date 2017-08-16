@@ -1,32 +1,39 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Orla Walsh
 
 ## Overview.
-...... A statement of the app concept and objectives (about a half-page) ........
+The concept of this application is for users to be able to search, add products and review products. To reduce the amount of reviws, the reviews are all stored within the product. The user can search for a product by brand or name to check to see if someone has already added that product. If the product is there, the user can click the name of the product and add their review to that product. If the product is not there, the user can add the product, once it is added they can then review it. When adding the product, the user can upload a picture of the product, add the name, brand, price and description of the product. When adding a review, the user must enter a username, select the product they are reviewing and then review the product, the date is added automatically and the review is then displayed underneath the product. They can also see all reviews on a seperate page. Other users can then see all the reviews for that product.
 
-
- . . . . . List of user features (excluding user registration and authentication) . . . . 
+#### List of user features
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Add a product
+ + Edit product
+ + Delete product
+ + Search product
+ + Add a review
+ + Navbar with routes
+ + Contact page
 
-## Installation requirements.
-. . . .  List of software used to develop the app . . . . . . . 
-+ ReactJS v15.3.0
-+ Bootstrap 3
+### Installation requirements.
++ ReactJS v15.6.1
 + create-react-app tool
-+ etc
-+ etc 
++ Bootstrap 3 
++ react-bootstrap
++ react-dropzone
++ react-moment
++ react-router
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
+### Cloning Application
++ git clone (add link here)
++ cd beauty-boxx
++ npm install
++ npm start
+
+This application runs on http://localhost:3000/
 
 ## Data Model Design.
-
-Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent).
+Diagram of app's data model and sample of the test data used (JSON or equivalent).
 
 ![][image1]
 
@@ -45,12 +52,12 @@ A diagram showing the app's hierarchical component design (see example below).
 ![][image3]
 
 ## Routing.
-. . . . List each route supported and state the associated view . . . . . 
-
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ / - displays all products
++ /Product - diplays form for entering a new product
++ /Review - displays form for entering a new review
++ /DisplayReview - displays all reviews
++ /About - displays information about the page
++ /Contact - displays information and contact form
 
 ## Extra features
 
@@ -65,3 +72,5 @@ A diagram showing the app's hierarchical component design (see example below).
 [image1]: ./model.png
 [image2]: ./design.jpg
 [image3]: ./screen.png
+
+
