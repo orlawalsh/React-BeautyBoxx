@@ -26,7 +26,7 @@ The concept of this application is for users to be able to search, add products 
 
 ### Cloning Application
 + git clone https://github.com/orlawalsh/React-BeautyBoxx.git
-+ cd beauty-boxx
++ cd React-BeautyBoxx
 + npm install
 + npm start
 
@@ -100,31 +100,29 @@ Screenshots of app's views
 
 
 ## Routing.
-+ / - displays all products
-+ /Product - diplays form for entering a new product
-+ /Review - displays form for entering a new review
-+ /DisplayReview - displays all reviews
-+ /About - displays information about the page
-+ /Contact - displays information and contact form
++ / - displays all products.
++ /Product - diplays form for entering a new product.
++ /Review - displays form for entering a new review.
++ /DisplayReview - displays all reviews.
++ /About - displays information about the page.
++ /Contact - displays information and contact form.
 
 ## Extra features
-+ Users can search for a product
-+ Users can delete & edit products
-+ react-dropzone was used for the purpose of being able to upload product images
-+ Images are stored using cloudinary
-+ use of the JSON local storage
-+ react-moment is used to display the date the review was posted
-+ Routes in a navbar for easy naviagtion between pages
++ Users can search for a product.
++ Users can delete & edit products.
++ react-dropzone was used for the purpose of being able to upload product images.
++ Images are stored using cloudinary.
++ use of the JSON local storage.
++ react-moment is used to display the date the review was posted.
++ Routes in a navbar for easy naviagtion between pages.
 
 ## Independent learning.
 
-+ I learned how to implement routing
-+ I learned how to use react-drop with cloudinary for the purpose of uploading product pictures
-+ I learned how to use and implement JSON local storage
-+ I also added a search function
-+
-+
-
++ I learned how to implement routing.
++ I learned how to use react-drop with cloudinary for the purpose of uploading product pictures.
++ I learned how to use and implement JSON local storage.
++ I also added a search function.
++ I learned some basic styling and I tried to use react-fontawesome for extra styling and better buttons but I didn't have time to do more styling.
 
 [image1]: ./model.png
 [image2]: ./diagram.png
